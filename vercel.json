@@ -4,13 +4,21 @@
     {
       "src": "api/index.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb" }
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.12"
+      }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api/index.py"
+      "dest": "api/index.py",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,OPTIONS,PUT,DELETE",
+        "Access-Control-Allow-Headers": "Content-Type,Authorization,User-Agent,bypass-tunnel-reminder"
+      }
     },
     {
       "src": "/admin/(.*)",
