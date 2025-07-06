@@ -25,3 +25,4 @@ instance/
 .DS_Store
 
 generate_password_hash.py
+.vercel

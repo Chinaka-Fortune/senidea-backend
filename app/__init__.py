@@ -49,7 +49,7 @@ def create_app():
             "http://localhost:3000",
             "http://localhost:5000",
             "https://curly-animals-drive.loca.lt",
-            "https://senidea-frontend.vercel.app"
+            "https://senidea-frontend-r7hz03bkp-fortune-chinakas-projects.vercel.app"
         ],
         "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
         "allow_headers": ["Content-Type", "Authorization", "User-Agent"],
