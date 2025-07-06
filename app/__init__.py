@@ -14,8 +14,20 @@ migrate = Migrate()
 bcrypt = Bcrypt()
 jwt = JWTManager()
 
-logging.basicConfig(level=logging.DEBUG, filename='app.log', filemode='a',
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+log_file = '/tmp/app.log' if os.environ.get('VERCEL') else 'app.log'
+try:
+    logging.basicConfig(
+        level=logging.DEBUG,
+        filename=log_file,
+        filemode='a',
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
+except OSError:
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )  
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
@@ -35,6 +47,7 @@ def create_app():
 
     jwt_key = os.environ.get('JWT_SECRET_KEY', 'Not set')
     logging.debug(f"JWT_SECRET_KEY (first 10 chars): {jwt_key[:10]}...")
+    
     logging.debug(f"DATABASE_URL: {os.environ.get('DATABASE_URL', 'Not set')}")
 
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///site.db')
@@ -47,12 +60,12 @@ def create_app():
     CORS(app, resources={r"/api/*": {
         "origins": [
             "http://localhost:3000",
-            "http://localhost:5000",
-            "https://curly-animals-drive.loca.lt",
-            "https://senidea-frontend-r7hz03bkp-fortune-chinakas-projects.vercel.app"
+            "https://quick-hands-dig.loca.lt",
+            "https://senidea-frontend-r7hz03bkp-fortune-chinakas-projects.vercel.app",
+            "https://senidea-backend-pevnhet0h-fortune-chinakas-projects.vercel.app"
         ],
         "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
-        "allow_headers": ["Content-Type", "Authorization", "User-Agent"],
+        "allow_headers": ["Content-Type", "Authorization", "User-Agent", "bypass-tunnel-reminder"],
         "expose_headers": ["Content-Type"],
         "supports_credentials": True,
         "send_wildcard": False,
