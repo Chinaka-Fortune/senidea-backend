@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "functions": {
+    "api/**/*.py": {
+      "handler": "api/index.handler",
+      "runtime": "python@3.9"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "/api/index.py"
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "postgresql://postgres.bsimdgmspkughjnldvkj:9487@aws-0-eu-north-1.pooler.supabase.com:6543/postgres",
+    "SECRET_KEY": "55a249f2778ec04a24c8682a9291ae30c7613d0e7924ad0b8263835014b1c54a",
+    "JWT_SECRET_KEY": "e3ba831297546b4eba93b88fdddfdfb015c2338fd1b861b504b82c9cb5a0145e",
+    "PAYSTACK_SECRET_KEY": "sk_test_bf88c661869d4da2c3fe6cefed21b27cca3dad01",
+    "ADMIN_SECRET": "55a249f2778ec04a24c8682a9291ae30c7613d0e7924ad0b8263835014b1c54a"
+  }
+}
