@@ -62,7 +62,7 @@ def create_app():
             "http://localhost:3000",
             "https://quick-hands-dig.loca.lt",
             "https://senidea-frontend-r7hz03bkp-fortune-chinakas-projects.vercel.app",
-            "https://senidea-backend-pevnhet0h-fortune-chinakas-projects.vercel.app"
+            "https://senidea-backend-7w797pixb-fortune-chinakas-projects.vercel.app"
         ],
         "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
         "allow_headers": ["Content-Type", "Authorization", "User-Agent", "bypass-tunnel-reminder"],
