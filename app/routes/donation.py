@@ -52,7 +52,7 @@ def donate():
         response = transaction.initialize(
             email=email,
             amount=int(amount * 100),
-            callback_url='https://senidea-backend-jugufeehb-fortune-chinakas-projects.vercel.app/api/donation/verify',
+            callback_url='https://senidea-backend-7w797pixb-fortune-chinakas-projects.vercel.app/api/donation/verify',
             metadata={'user_id': user_id, 'frequency': frequency, 'recognition': recognition}
         )
 

@@ -61,7 +61,7 @@ def create_app():
         "origins": [
             "http://localhost:3000",
             "https://quick-hands-dig.loca.lt",
-            "https://senidea-frontend-r7hz03bkp-fortune-chinakas-projects.vercel.app",
+            "https://https://senidea-frontend-fzcb6brie-fortune-chinakas-projects.vercel.app",
             "https://senidea-backend-7w797pixb-fortune-chinakas-projects.vercel.app"
         ],
         "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
