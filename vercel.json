@@ -10,7 +10,7 @@
       }
     },
     {
-      "src": "api/run_migrations.py",
+      "src": "api/debug_secret.py",
       "use": "@vercel/python"
     }
   ],
@@ -29,8 +29,8 @@
       "dest": "api/index.py"
     },
     {
-      "src": "/migrate",
-      "dest": "api/run_migrations.py"
+      "src": "/debug-secret",
+      "dest": "api/debug_secret.py"
     }
   ]
 }
