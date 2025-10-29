@@ -8,6 +8,10 @@
         "maxLambdaSize": "15mb",
         "runtime": "python3.12"
       }
+    },
+    {
+      "src": "api/run_migrations.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
@@ -23,6 +27,10 @@
     {
       "src": "/admin/(.*)",
       "dest": "api/index.py"
+    },
+    {
+      "src": "/migrate",
+      "dest": "api/run_migrations.py"
     }
   ]
 }
