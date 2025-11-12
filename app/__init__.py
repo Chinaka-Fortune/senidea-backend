@@ -60,9 +60,9 @@ def create_app():
     CORS(app, resources={r"/api/*": {
         "origins": [
             "http://localhost:3000",
-            "https://quick-hands-dig.loca.lt",
-            "https://https://senidea-frontend-fzcb6brie-fortune-chinakas-projects.vercel.app",
-            "https://senidea-backend-7w797pixb-fortune-chinakas-projects.vercel.app"
+            "https://senideafoundation.org",
+            "https://www.senideafoundation.org",
+            "https://senidea-backend.vercel.app"
         ],
         "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
         "allow_headers": ["Content-Type", "Authorization", "User-Agent", "bypass-tunnel-reminder"],
