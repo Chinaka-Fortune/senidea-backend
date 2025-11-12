@@ -83,9 +83,13 @@ def donate():
         db.session.rollback()
         return jsonify({'error': str(e)}), 400
 
-@donation_bp.route('/verify/<reference>', methods=['GET'])
-def verify_donation(reference):
+@donation_bp.route('/verify', methods=['GET'])
+def verify_donation():
     try:
+        reference = request.args.get('reference')
+        if not reference:
+            return jsonify({'error': 'No reference provided'}), 400
+
         transaction = Transaction(secret_key=PAYSTACK_SECRET_KEY)
         response = transaction.verify(reference=reference)
         logging.debug(f"Paystack verify response for {reference}: {response}")
